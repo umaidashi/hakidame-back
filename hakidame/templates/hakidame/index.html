@@ -1,0 +1,11 @@
+{% if latest_hakidame_list %}
+<ul>
+  {% for hakidame in latest_hakidame_list %}
+  <li>
+    <a href="{% url 'detail' hakidame.id %}">{{ hakidame.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No hakidame are available.</p>
+{% endif %}
