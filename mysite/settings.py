@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-f+qe@h8(q^)o^+4!p60_y-tg-fzlk9$2n6597npu*)f8m*5(g1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://hakidame-back.onrender.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["hakidame-back.onrender.com'", "127.0.0.1"]
 
 CSRF_COOKIE_HTTPONLY = False
 CORS_ORIGIN_ALLOW_ALL = False
