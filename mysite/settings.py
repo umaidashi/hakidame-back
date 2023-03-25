@@ -36,9 +36,11 @@ SECRET_KEY = 'django-insecure-f+qe@h8(q^)o^+4!p60_y-tg-fzlk9$2n6597npu*)f8m*5(g1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://hakidame-back.onrender.com", "127.0.0.1"]
 
 CSRF_COOKIE_HTTPONLY = False
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition
@@ -55,8 +57,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = ('x-requested-with', 'content-type', 'accept', 'origin', 'authorization','x-csrftoken', 'cache-control')
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'https://hakidame-front.vercel.app'
+]
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
@@ -77,11 +81,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
