@@ -1,8 +1,8 @@
 
 from rest_framework import generics
 from rest_framework.parsers import JSONParser
-from .serializers import HakidameSerializer
-from .models import Hakidame
+from .serializers import HakidameSerializer, TagSerializer
+from .models import Hakidame,Tag
 
 
 class HakidameView(generics.ListCreateAPIView):
@@ -23,3 +23,7 @@ class HakidameBookmarkView(generics.ListCreateAPIView):
 class HakidameDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Hakidame.objects.all()
     serializer_class = HakidameSerializer
+
+class TagsView(generics.ListCreateAPIView):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer

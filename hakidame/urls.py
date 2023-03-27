@@ -14,5 +14,6 @@ urlpatterns = [
     path('', views.HakidameView.as_view(), name='hakidame'),
     path('<int:pk>/', views.HakidameDetailView.as_view(), name='hakidame-detail'),
     path('todo/', views.HakidameTodoView.as_view(), name='hakidame-todo'),
-    path('bookmark/', views.HakidameBookmarkView.as_view(), name='hakidame-bookmark')
+    path('bookmark/', views.HakidameBookmarkView.as_view(), name='hakidame-bookmark'),
+    path('tags/', views.TagsView.as_view(), name='tags')
 ]
