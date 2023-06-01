@@ -59,13 +59,11 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'http://localhost:3000',
     'https://hakidame-front.vercel.app'
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'http://localhost:3001',
     'https://hakidame-front.vercel.app'
     
 ]

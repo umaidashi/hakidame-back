@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Hakidame, Tag
+from .models import Hakidame
 
 
 class HakidameSerializer(serializers.ModelSerializer):
@@ -32,15 +32,3 @@ class HakidameSerializer(serializers.ModelSerializer):
 
     def delete(self):
         self.delete(is_hard=True)
-
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = '__all__'
-    
-    def create(self, validated_data):
-        newTag = Tag.objects.create(
-            name=validated_data["name"],
-        )
-        newTag.save()
-        return newTag
